@@ -1,11 +1,11 @@
 # Le site dont vous êtes le héros
 
-URL du site : http://votre-url-ici.com
+URL du site : https://w1p2021-hero-tahar-aitamrane.netlify.com
 
 ### Groupe
 
-- Prénom & Nom
-- Prénom & Nom
+- Najib TAHAR-BERRABAH
+- Hassane AIT AMRANE
 
 ## Prologue
 

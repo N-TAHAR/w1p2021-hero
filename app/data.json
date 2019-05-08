@@ -1,0 +1,21 @@
+{
+  "game" : {
+    "1":{
+      "message" : "J'ai plus de batterie dans mon téléphone",
+      "actions" : {
+        "1" : {
+          "message" : "Salon",
+          "path" : "/game/2"
+        },
+        "2" : {
+          "message" : "Salle de bain",
+          "path" : "/game/3"
+        },
+        "3" : {
+          "message" : "Chambre",
+          "path" : "/game/4"
+        }
+      }
+    }
+  }
+}

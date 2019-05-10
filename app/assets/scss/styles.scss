@@ -1,7 +1,8 @@
 @import 'reset';
 @import url('https://fonts.googleapis.com/css?family=Roboto:300,400,700');
 
-$hetic-green: #0de595;
+$black: #101010;
+$white: #fafafa;
 
 body,
 button,
@@ -9,10 +10,15 @@ input,
 select,
 textarea {
   font-family: 'Roboto';
+  font-size: 18px;
+}
+
+body{
+  overflow: hidden;
 }
 
 .big-header {
-  background-color: $hetic-green;
+  background-color: $black;
   height: 100vh;
 
   display: flex;
@@ -21,15 +27,91 @@ textarea {
   flex-wrap: wrap;
   flex-direction: column;
 
-  color: white;
+  color: $white;
+}
+
+.actions{
+  display: flex;
+}
+
+.action:not(:last-child){
+  margin-right: 10px;
 }
 
 .button {
-  color: $hetic-green;
+  color: $black;
   text-decoration: none;
-  background: white;
-  padding: 5px;
+  background: $white;
+  padding: 10px;
   border-radius: 5px;
   display: inline-block;
   border: none;
+}
+
+.inventory{
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  display: flex;
+
+  li{
+    padding: 30px;
+    border-radius: 50%;
+    border: 2px solid $white;
+
+    &:not(:last-child){
+      margin-right: 20px;
+    }
+  }
+
+  .full{
+    background: $white;
+  }
+}
+
+.pane-leave-active,
+.pane-enter-active {
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform: translateX(100vw);
+    background: black;
+    z-index: 1;
+  }
+}
+
+.pane-leave-active {
+  animation: fake 1s;
+
+  &::after {
+    animation: slideLeave 1s;
+  }
+}
+
+.pane-enter-active {
+  animation: fake 2s;
+
+  &::after {
+    animation: slideEnter 1s ease 1s;
+  }
+}
+
+@keyframes slideLeave {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideEnter {
+  from {
+    transform: translate(0);
+  }
+  to {
+    transform: translateX(-100vw);
+  }
 }

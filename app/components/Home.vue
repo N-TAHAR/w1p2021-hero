@@ -1,6 +1,6 @@
 <template>
   <div class="big-header">
-    <h1>{{ message }}</h1>
+    <h1>Le site dont vous êtes le héros</h1>
     <br />
     <router-link class="button" to="/character">Start</router-link>
   </div>
@@ -9,9 +9,9 @@
 <script>
 export default {
   data() {
-    return {
-      message: 'Hello Hetic'
-    };
+    return{
+      
+    }
   }
 };
 </script>

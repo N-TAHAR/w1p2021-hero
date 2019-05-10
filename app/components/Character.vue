@@ -2,14 +2,25 @@
   <div class="big-header">
     <h1>Choissisez votre personnage</h1>
     <br />
-    <router-link class="button" to="/game/1">
-      TOM
-    </router-link>
-    <router-link class="button" to="/game/1">
-      CLARA
-    </router-link>
+    <ul class="actions">
+      <li class="action">
+        <router-link class="button" to="/game/1">
+          TOMMY
+        </router-link>
+      </li>
+      <li class="action">
+        <router-link class="button" to="/game/1">
+          CLARA
+        </router-link>
+      </li>
+    </ul>
   </div>
 </template>
+
+<style>
+  
+
+</style>
 
 <script>
 export default {

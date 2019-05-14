@@ -8,11 +8,11 @@
           "path" : "/game/2"
         },
         "2" : {
-          "message" : "Salle de bain",
+          "message" : "Chambre 1",
           "path" : "/game/3"
         },
         "3" : {
-          "message" : "Chambre",
+          "message" : "Chambre 2",
           "path" : "/game/4"
         }
       }

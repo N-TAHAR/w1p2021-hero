@@ -11,15 +11,20 @@
     </ul>
     <div class="key" v-show="!key" @click="getKey"></div>
 
-    <ul class="inventory" v-show="key">
-      <li class="full"></li>
+    <div id="components-demo">
+      <inventory></inventory>
+    </div>
+
+    <ul class="inventory">
+      <li class="full" v-show="key"></li>
     </ul>
   </div>
 </template>
 
 <script>
 import data from '../../data.json';
-import {inventory} from '../../app.js';
+import inventory from '../../services/inventory.js';
+// import {inventory} from '../../app.js';
 
 
 export default {
@@ -27,15 +32,13 @@ export default {
     return {
       message: data.game[1].message,
       actions: data.game[1].actions,
-      key: inventory.key,
+      key: inventory.keyGenerator,
     };
   },
   methods: {
     getKey(){
-      console.log(inventory.key)
-      inventory.key = true
-      this.key = inventory.key
-      console.log(inventory.key)
+      inventory.getKey();
+      this.key = inventory.keyGenerator;
     }
   }
 };

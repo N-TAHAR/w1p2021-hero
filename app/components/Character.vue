@@ -4,12 +4,12 @@
     <br />
     <ul class="actions">
       <li class="action">
-        <router-link class="button" to="/game/1">
+        <router-link class="button" to="/game/0">
           TOMMY
         </router-link>
       </li>
       <li class="action">
-        <router-link class="button" to="/game/1">
+        <router-link class="button" to="/game/0">
           CLARA
         </router-link>
       </li>

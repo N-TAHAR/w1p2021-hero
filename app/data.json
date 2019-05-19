@@ -1,11 +1,12 @@
 {
-  "game" : {
-    "1":{
+  "game" : [
+    {
+      "id" : 0,
       "message" : "J'ai plus de batterie dans mon téléphone",
       "actions" : {
         "1" : {
           "message" : "Salon",
-          "path" : "/game/2"
+          "path" : "/game/1"
         },
         "2" : {
           "message" : "Chambre 1",
@@ -13,9 +14,65 @@
         },
         "3" : {
           "message" : "Chambre 2",
-          "path" : "/game/4"
+          "path" : "/game/5"
+        }
+      }
+    },
+    {
+      "id" : 1,
+      "actions": {
+        "1": {
+          "message": "Acceuil",
+          "path": "/game/0"
+        },
+        "2": {
+          "message": "Salle de bain",
+          "path": "/game/2"
+        }
+      }
+    },
+    {
+      "id" : 2,
+      "message" : "Je dois trouver une clé pour le générateur",
+      "actions": {
+        "1": {
+          "message": "Salon",
+          "path": "/game/1"
+        }
+      }
+    },
+    {
+      "id" : 3,
+      "actions": {
+        "1": {
+          "message": "Acceuil",
+          "path": "/game/0"
+        },
+        "2": {
+          "message": "Salle",
+          "path": "/game/4"
+        }
+      }
+    },
+    {
+      "id" : 4,
+      "message" : "Je dois vite allumer ce générateur",
+      "actions": {
+        "1": {
+          "message": "Chambre 1",
+          "path": "/game/3"
+        }
+      }
+    },
+    {
+      "id" : 5,
+      "message" : "Je dois appeler la police",
+      "actions": {
+        "1": {
+          "message": "Acceuil",
+          "path": "/game/0"
         }
       }
     }
-  }
+  ]
 }

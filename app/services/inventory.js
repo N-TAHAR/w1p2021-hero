@@ -1,17 +1,18 @@
 class inventory {
   constructor() {
-    this.keyGenerator = false;
-    this.keyPhone = false;
-    this.keyCount = 0;
+    this.keyGenerator = localStorage.getItem('keyGenerator') || false;
+    this.keyPhone = localStorage.getItem('keyPhone') || false;
   }
-  getKey() {
-    console.log('ye');
-    this.keyGenerator = true;
-    console.log(this.keyGenerator);
-    return this.keyGenerator
-    // if (key === generator){
-
-    // }
+  getKey(key) {
+    if (key == 'generator'){
+      this.keyGenerator = !this.keyGenerator;
+      localStorage.setItem('keyGenerator', this.keyGenerator)
+      return this.keyGenerator
+    }else if (key == 'phone'){
+      this.keyPhone = !this.keyPhone;
+      localStorage.setItem('keyPhone', this.keyPhone)
+      return this.keyPhone
+    }
   }
 }
 

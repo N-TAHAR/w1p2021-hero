@@ -67,6 +67,7 @@
     {
       "id" : 5,
       "message" : "Je dois appeler la police",
+      "error": "Il n'y a pas de courant. Il faut que je l'allume.",
       "actions": {
         "1": {
           "message": "Acceuil",

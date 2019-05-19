@@ -1,7 +1,7 @@
 <template>
   <div class="big-header">
     <h1>{{ steps.message }}</h1>
-    <h1>{{ steps.error }}</h1>
+    <h1 v-if="this.steps.id === 5" v-show="errorPhone">{{ steps.error }}</h1>
     <br />
     <ul class="actions">
       <li class="action" v-for="(action, index) in steps.actions" :key="index">
@@ -14,6 +14,8 @@
     <div class="key keyGenerator" v-if="this.steps.id === 1" v-show="!keyGenerator && !generatorDoor" @click="getKey('generator')"></div>
 
     <div class="key keyPhone" v-if="this.steps.id === 4" v-show="!keyPhone && !phoneDoor" @click="getKey('phone')"></div>
+
+    <div class="phone" v-if="this.steps.id === 5" @click="errorPhone = true "></div>
 
     <ul class="inventory">
       <li class="full" v-show="keyGenerator && !generatorDoor"></li>
@@ -35,6 +37,7 @@ export default {
       keyPhone: inventory.keyPhone,
       generatorDoor: localStorage.getItem('generator') || false,
       phoneDoor: localStorage.getItem('phone') || false,
+      errorPhone: false
     };
   },
   methods: {
@@ -65,6 +68,9 @@ export default {
         this.haveKey(this.keyPhone, this.phoneDoor, 'phone', '/game/1')
         this.phoneDoor = localStorage.getItem('phone')
       }
+    },
+    isWork(){
+
     },
     getRoute(){
       return data.game.find(
@@ -103,6 +109,16 @@ export default {
   position: absolute;
   top: 60%;
   left: 65%;
+}
+
+.phone{
+  position: absolute;
+  top: 80%;
+  left: 80%;
+  width: 100px;
+  height: 100px;
+  background-color: green;
+  cursor: pointer;
 }
 
 </style>

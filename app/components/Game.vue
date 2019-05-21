@@ -114,6 +114,10 @@ export default {
   //character = {name: "Najib", skills: 10}
   //localStorage.setItem('character', JSON.stringify(character))
   //JSON.parse(localStorage.getItem('character'))
+
+  // <audio src="../assets/audio/son.mp3" autoplay red="audio"></audio>
+  // this.$refs.audio
+  // this.$refs.audio.pause()
 };
 </script>
 

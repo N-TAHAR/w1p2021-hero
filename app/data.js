@@ -9,15 +9,15 @@ export default{
   "game" : [
     {
       "id" : 0,
-      "message" : "J'ai plus de batterie dans mon téléphone",
+      "message" : "J'ai plus de batterie, il faut que je trouve un téléphone",
       "image": acceuil,
       "actions" : {
         "1" : {
-          "message" : "Chambre 1",
+          "message" : "Bibliothèque",
           "path" : "/game/1"
         },
         "2" : {
-          "message" : "Chambre 2",
+          "message" : "Chambre",
           "path" : "/game/3"
         },
         "3" : {
@@ -45,8 +45,12 @@ export default{
       "image": generateur,
       "actions": {
         "1": {
-          "message": "Chambre 1",
+          "message": "Bibliothèque",
           "path": "/game/1"
+        },
+        "2": {
+          "message": "???",
+          "path": "/lose"
         }
       }
     },
@@ -70,7 +74,7 @@ export default{
       "image": bain,
       "actions": {
         "1": {
-          "message": "Chambre 2",
+          "message": "Chambre",
           "path": "/game/3"
         }
       }
@@ -80,17 +84,6 @@ export default{
       "message" : "Je dois appeler la police",
       "error": "Il n'y a pas de courant. Il faut que je l'allume.",
       "image": salon,
-      "actions": {
-        "1": {
-          "message": "Acceuil",
-          "path": "/game/0"
-        }
-      }
-    },
-    {
-      "id" : 6,
-      "message" : "Je dois appeler la police",
-      "error": "Il n'y a pas de courant. Il faut que je l'allume.",
       "actions": {
         "1": {
           "message": "Acceuil",

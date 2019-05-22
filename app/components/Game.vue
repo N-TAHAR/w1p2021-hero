@@ -1,13 +1,19 @@
 <template>
   <div class="big-header">
-
-    <img :src="steps.image" alt="">
+    <!-- <audio src="../assets/audio/game.ogg" autoplay loop ref="audio"></audio> -->
+    <audio src="../assets/audio/menu.ogg" autoplay loop ref="audio"></audio>
+    <div v-if="audio" class="mute" @click="mute"></div>
+    <div v-else class="mute sound" @click="mute"></div>
+    <img class="background" :src="steps.image" alt="">
     <div class="titles">
       <h1>{{ steps.message }}</h1>
       <h1 v-if="this.steps.id === 5" v-show="errorPhone">{{ steps.error }}</h1>
       <h1 v-if="this.steps.id === 1 || this.steps.id === 3" v-show="errorDoor">J'ai besoin d'une clé pour aller là</h1>
       <h1 v-if="this.steps.id === 2" v-show="generator">Générateur activé</h1>
     </div>
+
+    <img v-show="personnage == 'clara'" class="game-perso" src="../assets/images/clara.png" alt="perso">
+    <img v-show="personnage == 'tommy'" class="game-perso" src="../assets/images/tommy.png" alt="perso">
     
     <br />
     <ul class="actions">
@@ -48,11 +54,21 @@ export default {
       errorPhone: false,
       errorDoor: false,
       generator: localStorage.getItem('isGenerate') || false,
-      image: this.getRoute().image,
-      transition: true
+      personnage: localStorage.getItem('personnage') ,
+      audio: true
     };
   },
   methods: {
+    mute(){
+      if(this.audio){
+        this.$refs.audio.pause()
+        this.audio = false
+      }else{
+        this.$refs.audio.play()
+        this.audio = true
+      }
+       
+    },
     getKey(key){ 
       if(key === 'generator'){
         inventory.getKey(key);
@@ -73,23 +89,27 @@ export default {
         this.$router.push(path)
       }  
     },
+    reset(){
+      localStorage.removeItem('isGenerate');
+      localStorage.removeItem('keyGenerator');
+      localStorage.removeItem('generator');
+      localStorage.removeItem('phone');
+      localStorage.removeItem('keyPhone');
+    },
     access(){
       this.errorDoor = false
       if(this.steps.id === 4){
         this.haveKey(this.keyGenerator, this.generatorDoor, 'generator', '/game/3')
         this.generatorDoor = localStorage.getItem('generator')
       } else if(this.steps.id === 2) {
+        console.log('ok')
         this.haveKey(this.keyPhone, this.phoneDoor, 'phone', '/game/1')
         this.phoneDoor = localStorage.getItem('phone')
       }
     },
     canCall(){
       if(this.generator){
-        localStorage.removeItem('isGenerate');
-        localStorage.removeItem('generator');
-        localStorage.removeItem('phone')
-        localStorage.removeItem('phoneDoor');
-        localStorage.removeItem('generatorDoor');
+        this.reset()
         this.$router.push('/win')
       } else {
         this.errorPhone = true;
@@ -161,6 +181,26 @@ export default {
   top: 251px;
   background: url('../assets/images/generateur.svg') no-repeat;  
   cursor: pointer;
+}
+
+.game-perso{
+  position: absolute;
+  bottom: 15%;
+  left: 10%;
+}
+
+.mute{
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  width: 50px;
+  height: 50px;
+  background: url('../assets/images/speaker.svg');
+  cursor: pointer;
+}
+
+.sound{
+  background: url('../assets/images/speaker (1).svg');
 }
 
 </style>

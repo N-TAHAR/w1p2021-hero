@@ -1,8 +1,7 @@
 <template>
 <transition name="opacity" appear>
   <div class="big-header">
-    <audio src="../assets/audio/menu.ogg" loop ref="audio"></audio>
-    <!-- <audio src="../assets/audio/game.ogg" autoplay loop ref="audio"></audio> -->
+    <audio src="../assets/audio/menu.ogg" autoplay loop ref="audio"></audio>
     <div v-if="audio" class="mute" @click="mute"></div>
     <div v-else class="mute sound" @click="mute"></div>
     <img class="background" :src="steps.image" alt="">
@@ -100,12 +99,12 @@ export default {
       localStorage.removeItem('keyPhone');
     },
     access(){
+      localStorage.setItem('save', this.steps.id)
       this.errorDoor = false
       if(this.steps.id === 4){
         this.haveKey(this.keyGenerator, this.generatorDoor, 'generator', '/game/3')
         this.generatorDoor = localStorage.getItem('generator')
       } else if(this.steps.id === 2) {
-        console.log('ok')
         this.haveKey(this.keyPhone, this.phoneDoor, 'phone', '/game/1')
         this.phoneDoor = localStorage.getItem('phone')
       }
@@ -127,6 +126,12 @@ export default {
        game => game.id === parseInt(this.$route.params.id)
       )
     },
+  },
+  mounted(){
+    inventory.keyGenerator = localStorage.getItem('keyGenerator') || false;
+    this.keyGenerator = inventory.keyGenerator;
+    inventory.keyPhone = localStorage.getItem('keyPhone') || false;
+    this.keyPhone = inventory.keyPhone;
   },
   watch: {
     '$route' (to, from) {

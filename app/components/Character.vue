@@ -1,4 +1,5 @@
 <template>
+<transition name="opacity" appear>
   <div class="big-header character-page">
     <h1 class="titles">Choissisez votre personnage</h1>
     <br />
@@ -21,6 +22,8 @@
       </li>
     </ul>
   </div>
+</transition>
+
 </template>
 
 <style>

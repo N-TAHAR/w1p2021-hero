@@ -1,7 +1,8 @@
 <template>
+<transition name="opacity" appear>
   <div class="big-header">
+    <audio src="../assets/audio/menu.ogg" loop ref="audio"></audio>
     <!-- <audio src="../assets/audio/game.ogg" autoplay loop ref="audio"></audio> -->
-    <audio src="../assets/audio/menu.ogg" autoplay loop ref="audio"></audio>
     <div v-if="audio" class="mute" @click="mute"></div>
     <div v-else class="mute sound" @click="mute"></div>
     <img class="background" :src="steps.image" alt="">
@@ -37,6 +38,8 @@
       <li class="full" v-show="keyPhone && !phoneDoor"></li>
     </ul>
   </div>
+</transition>
+
 </template>
 
 <script>
@@ -55,7 +58,7 @@ export default {
       errorDoor: false,
       generator: localStorage.getItem('isGenerate') || false,
       personnage: localStorage.getItem('personnage') ,
-      audio: true
+      audio: true,
     };
   },
   methods: {

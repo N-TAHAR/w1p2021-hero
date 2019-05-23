@@ -31,6 +31,7 @@ body{
 
 .big-header {
   position: relative;
+  top: 0;
   height: 750px;
   width: 1366px;
   display: flex;
@@ -113,7 +114,7 @@ body{
 
 .opacity-leave-active,
 .opacity-enter-active{
-  transition: all 3s ease;
+  transition: all 2s ease;
   &::after {
     content: '';
     display: block;
@@ -123,17 +124,22 @@ body{
     right: 0;
     bottom: 0;
     background: black;
+    opacity: 0;
     z-index: 1;
-
+    pointer-events: none;
   }
 }
 
-.opacity-enter{
+.opacity-leave-active{
+  animation: fake 2s;
+}
+
+.opacity-enter, .opacity-leave-to{
   opacity: 0;
 }
 
-.opacity-leave{
-  opacity: 0;
+.opacity-leave, .opacity-enter-to{
+  opacity: 1;
 }
 
 .pane-leave-active,

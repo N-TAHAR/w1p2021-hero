@@ -40,7 +40,7 @@
 
 .menu{
   position: relative;
-  transition: opacity, transform 3s;
+  transition: opacity 3s, transform 3s;
   opacity: 0;
   transform: translateY(300px);
 }
@@ -98,7 +98,7 @@ export default {
     }
   },
   mounted(){
-    setTimeout(()=> this.name = "menu fade", 10000)
+    setTimeout(()=> this.name = "menu fade", 1000)
   },
   methods: {
     reset(){

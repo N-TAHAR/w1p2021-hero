@@ -2,7 +2,7 @@
   <div class="big-header">
     <audio src="../assets/audio/lose.ogg" autoplay ref="audio"></audio>
     <img class="background" src="../assets/images/scary.gif" alt="">
-    <h1>You Lose</h1>
+    <h1 class="title-home">You Lose</h1>
     <br />
     <router-link class="button" to="/home">Menu principal</router-link>
   </div>
@@ -16,6 +16,8 @@ export default {
       localStorage.removeItem('generator');
       localStorage.removeItem('phone');
       localStorage.removeItem('keyPhone');
+      setTimeout(()=> localStorage.removeItem('save'), 1000)
+
   }
 };
 </script>

@@ -18,7 +18,7 @@
     <br />
     <ul class="actions">
       <li class="action" v-for="(action, index) in steps.actions" :key="index">
-          <router-link class="button" :to="action.path" @click.native.prevent="access">
+          <router-link class="button" :to="action.path" @click.native.prevent="access" >
             {{ action.message }}
           </router-link>
       </li>
@@ -100,6 +100,7 @@ export default {
     },
     access(){
       localStorage.setItem('save', this.steps.id)
+      this.errorPhone = false
       this.errorDoor = false
       if(this.steps.id === 4){
         this.haveKey(this.keyGenerator, this.generatorDoor, 'generator', '/game/3')
@@ -183,7 +184,7 @@ export default {
 
 .generator{
   position: absolute;
-  width: 126.41px;
+  width: 135px;
   height: 142px;
   left: 700px;
   top: 251px;

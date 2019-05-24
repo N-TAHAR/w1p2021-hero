@@ -12,5 +12,13 @@
 
 <script>
 export default {
+    mounted(){
+      localStorage.removeItem('isGenerate');
+      localStorage.removeItem('keyGenerator');
+      localStorage.removeItem('generator');
+      localStorage.removeItem('phone');
+      localStorage.removeItem('keyPhone');
+      localStorage.removeItem('save');
+  }
 };
 </script>

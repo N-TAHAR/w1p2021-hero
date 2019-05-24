@@ -31,7 +31,7 @@ export default{
       "image": bibliotheque,
       "actions": {
         "1": {
-          "message": "Acceuil",
+          "message": "Accueil",
           "path": "/game/0"
         },
         "2": {
@@ -59,7 +59,7 @@ export default{
       "image": chambre,
       "actions": {
         "1": {
-          "message": "Acceuil",
+          "message": "Accueil",
           "path": "/game/0"
         },
         "2": {
@@ -86,7 +86,7 @@ export default{
       "image": salon,
       "actions": {
         "1": {
-          "message": "Acceuil",
+          "message": "Accueil",
           "path": "/game/0"
         }
       }

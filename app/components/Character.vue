@@ -39,10 +39,10 @@ figcaption{
   text-align: center;
   text-decoration: none;
   list-style-type: none;
-  background-color: #fafafa;
+  /* background-color: #fafafa; */
   padding: 10px 20px;
-  border-radius: 10px;
-  color: #000000;
+  /* border-radius: 10px; */
+  color: #fafafa;
 }
 
 

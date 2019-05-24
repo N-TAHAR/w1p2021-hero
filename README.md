@@ -61,4 +61,4 @@ Se mettre dans un terminal dans le répertoire du projet forké, puis :
 
 ### Données choix/map
 
-![alt text](https://github.com/N-TAHAR/w1p2021-hero-tahar-aitamrane/tree/master/app/assets/images/Frame.png)
+![alt text](https://github.com/N-TAHAR/w1p2021-hero-tahar-aitamrane/blob/master/app/assets/images/Frame.png)
